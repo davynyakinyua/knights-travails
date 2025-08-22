@@ -29,6 +29,13 @@ function knightMoves (start, end){
         if(current[0] === end[0] && current[1] === end[1]){
             return path; // path taken from start to end
         }
+
+        // explore all posible knight moves
+        for(const move of knightMoves){
+            const nextX = current[0] + move[0];
+            const nextY = current[1] + move[1];
+            const nextPosition = [nextX, nextY];
+        }
     }
 
 
