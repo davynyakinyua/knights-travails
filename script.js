@@ -12,7 +12,7 @@ function knightMoves (start, end){
     // Bread First Search
     // initialize the queue for bfs
     const queue = [[start]];
-    // keeping track of visited nodes
+    // keeping track of visited nodes and avoid duplicates
     const visited = new Set();
     // initialize visited with start 
     visited.add(start.toString()); // string for eassy tracking
@@ -30,7 +30,7 @@ function knightMoves (start, end){
             return path; // path taken from start to end
         }
 
-        // explore all posible knight moves
+        // find the next position to move
         for(const move of knightMoves){
             const nextX = current[0] + move[0];
             const nextY = current[1] + move[1];
@@ -57,3 +57,12 @@ function knightMoves (start, end){
             // ensures the rules of the board are followed
             return x >= 0 && x < 8 && y >= 0 && y < 8;
         }
+
+
+console.log(knightMoves([0, 0], [2, 1]));
+
+console.log('start: [0, 0] => end:[6, 3]');
+console.log(knightMoves([0, 0], [6, 3]));
+
+console.log('[0, 6] => [7, 4]');
+console.log(knightMoves([0, 6], [7, 7]));
